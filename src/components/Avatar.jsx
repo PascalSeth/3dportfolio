@@ -17,19 +17,19 @@ export function Avatar(props) {
   const { nodes, materials } = useGLTF("models/66d01f8250a930dac18b05a9.glb");
 
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
-  const { animations: standingAnimation } = useFBX(
-    "animations/Standing Idle.fbx"
+  const { animations: WarriorAnimation } = useFBX(
+    "animations/Warrior Idle.fbx"
   );
   const { animations: fallingAnimation } = useFBX(
     "animations/Falling Idle.fbx"
   );
 
   typingAnimation[0].name = "Typing";
-  standingAnimation[0].name = "Standing";
+  WarriorAnimation[0].name = "Warrior";
   fallingAnimation[0].name = "Falling";
 
   const { actions } = useAnimations(
-    [typingAnimation[0], standingAnimation[0], fallingAnimation[0]],
+    [typingAnimation[0], WarriorAnimation[0], fallingAnimation[0]],
     group
   );
 
@@ -133,5 +133,5 @@ export function Avatar(props) {
 
 useGLTF.preload("models/66d01f8250a930dac18b05a9.glb");
 useFBX.preload("animations/Typing.fbx");
-useFBX.preload("animations/Standing Idle.fbx");
+useFBX.preload("animations/Warrior Idle.fbx");
 useFBX.preload("animations/Falling Idle.fbx");
