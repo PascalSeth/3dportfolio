@@ -265,10 +265,14 @@ const ProjectsSection = () => {
 };
 
 const ContactSection = () => {
-  const [state, handleSubmit] = useForm("mayzgjbd");
+  const [state, handleSubmit] = useForm("mldrzqpv");
   return (
     <Section>
-      <h2 className="text-3xl md:text-5xl font-bold">Contact me</h2>
+      <div className=" flex items-center ">
+        <h2 className="text-3xl md:text-5xl font-bold">Contact me</h2>
+      <img src="/profile.JPG" className="h-16 w-16 ml-4 rounded-full" alt=""/>
+      </div>
+      
       <div className="mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
         {state.succeeded ? (
           <p className="text-gray-900 text-center">Thanks for your message !</p>
