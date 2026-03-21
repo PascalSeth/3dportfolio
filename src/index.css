@@ -10,3 +10,28 @@
 body {
   margin: 0;
 }
+
+/* Prevent layout shifts during animations */
+* {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Optimize animations with GPU acceleration */
+[class*="motion"] {
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent pointer events glitches during animations */
+[class*="motion"] button {
+  pointer-events: auto;
+}
+
+/* Ensure smooth transitions */
+section {
+  contain: layout style paint;
+}

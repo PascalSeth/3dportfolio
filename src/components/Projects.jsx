@@ -58,11 +58,16 @@ const Project = (props) => {
   const bgOpacity = useMotionValue(0.4);
 
   useEffect(() => {
-    animate(bgOpacity, highlighted ? 0.7 : 0.4);
-  }, [highlighted]);
+    animate(bgOpacity, highlighted ? 0.7 : 0.4, {
+      duration: 0.3,
+      ease: "easeInOut",
+    });
+  }, [highlighted, bgOpacity]);
 
   useFrame(() => {
-    background.current.material.opacity = bgOpacity.get();
+    if (background.current) {
+      background.current.material.opacity = bgOpacity.get();
+    }
   });
 
   return (
@@ -121,6 +126,10 @@ export const Projects = () => {
             z: currentProject === index ? -2 : -3,
             rotateX: currentProject === index ? 0 : -Math.PI / 3,
             rotateZ: currentProject === index ? 0 : -0.1 * Math.PI,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
           }}
         >
           <Project project={project} highlighted={index === currentProject} />

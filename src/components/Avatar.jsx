@@ -7,6 +7,7 @@ import { useControls } from "leva";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
+
 export function Avatar(props) {
   const { animation, wireframe } = props;
   const { headFollow, cursorFollow } = useControls({

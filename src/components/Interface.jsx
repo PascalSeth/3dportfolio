@@ -11,6 +11,7 @@ const Section = (props) => {
       className={`
   h-screen w-screen p-8 max-w-screen-2xl mx-auto
   flex flex-col items-start
+  overflow-hidden
   ${mobileTop ? "justify-start md:justify-center" : "justify-center"}
   `}
       initial={{
@@ -245,16 +246,16 @@ const ProjectsSection = () => {
 
   return (
     <Section>
-      <div className="flex w-full h-full gap-8 items-center justify-center">
+      <div className="flex w-full h-full gap-8 items-center justify-center flex-nowrap">
         <button
-          className="hover:text-indigo-600 transition-colors"
+          className="hover:text-indigo-600 transition-colors whitespace-nowrap flex-shrink-0"
           onClick={previousProject}
         >
           ← Previous
         </button>
-        <h2 className="text-3xl md:text-5xl font-bold">My Works</h2>
+        <h2 className="text-3xl md:text-5xl font-bold whitespace-nowrap flex-shrink-0">My Works</h2>
         <button
-          className="hover:text-indigo-600 transition-colors"
+          className="hover:text-indigo-600 transition-colors whitespace-nowrap flex-shrink-0"
           onClick={nextProject}
         >
           Next →
